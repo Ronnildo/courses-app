@@ -12,7 +12,7 @@ class _InitialPageState extends State<InitialPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF8FADEB),
+      backgroundColor: const Color(0xFF717BCE),
       body: Padding(
         padding: const EdgeInsets.only(
           right: 30.0,
@@ -84,7 +84,7 @@ class _InitialPageState extends State<InitialPage> {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: const Color(0xFF4763A2),
+                      primary: const Color(0xFF372A77),
                       fixedSize: const Size(230, 40),
                       textStyle: const TextStyle(
                         fontSize: 14,
