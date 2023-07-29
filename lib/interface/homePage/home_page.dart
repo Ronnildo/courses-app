@@ -203,7 +203,9 @@ class _HomePageState extends State<HomePage> {
                       duration: courses[index]["duration"],
                     );
                   },
-                  separatorBuilder: (context, index) => const Divider(),
+                  separatorBuilder: (context, index) => const SizedBox(
+                    height: 20,
+                  ),
                   itemCount: courses.length,
                 ),
               ),
