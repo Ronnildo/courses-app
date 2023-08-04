@@ -2,6 +2,7 @@ import 'package:cursos_app/interface/detailCourse/detail_page.dart';
 import 'package:cursos_app/interface/homePage/widgets/card_course.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import '../../core/data.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,42 +12,27 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Data data = Data();
   List<String> carrossel = [
     "Desing",
     "Development",
     "Marketing",
-    "Data Analisys"
+    "DataAnalisys"
   ];
 
-  List<Map<String, dynamic>> courses = [
-    {
-      "color": const Color.fromARGB(255, 170, 182, 247),
-      "title": "UI/UX Design Course",
-      "score": 5.0,
-      "duration": "8h,33min",
-      "popularity": "Most Popular"
-    },
-    {
-      "color": const Color.fromARGB(255, 187, 255, 229),
-      "title": "Ilustration Course",
-      "score": 4.8,
-      "duration": "7h,33min",
-      "popularity": "Popular"
-    },
-    {
-      "color": const Color.fromARGB(255, 236, 161, 154),
-      "title": "Graphic Design Course",
-      "score": 4.7,
-      "duration": "6h,33min",
-      "popularity": "Popular"
-    },
-  ];
-
-  void detailPage(String title, double score, String duration) {
+  void detailPage(String title, String author, double score, String duration,
+      int value, Map<String, Map<String, dynamic>> modules) {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const DetailPage(),
+        builder: (context) => DetailPage(
+          title: title,
+          author: author,
+          score: score,
+          duration: duration,
+          value: value,
+          modules: modules,
+        ),
       ),
     );
   }
@@ -96,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                 height: 12,
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width / 1.5,
+                width: MediaQuery.of(context).size.width / 1.4,
                 child: const Text(
                   "Let's found your favorite course",
                   style: TextStyle(
@@ -176,8 +162,8 @@ class _HomePageState extends State<HomePage> {
                       child: AutoSizeText(
                         itens,
                         style: const TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
                           color: Colors.white,
                         ),
                       ),
@@ -192,26 +178,71 @@ class _HomePageState extends State<HomePage> {
                   itemBuilder: (context, index) {
                     return CardCourse(
                       onTap: () => detailPage(
-                        courses[index]["title"],
-                        courses[index]["score"],
-                        courses[index]["duration"],
+                        data.data()[index]["title"],
+                        data.data()[index]["author"],
+                        data.data()[index]["score"],
+                        data.data()[index]["duration"],
+                        data.data()[index]["value"],
+                        data.data()[index]["modules"],
                       ),
-                      color: courses[index]["color"],
-                      title: courses[index]["title"],
-                      popularity: courses[index]["popularity"],
-                      score: courses[index]["score"],
-                      duration: courses[index]["duration"],
+                      color: data.data()[index]["color"],
+                      title: data.data()[index]["title"],
+                      popularity: data.data()[index]["popularity"],
+                      score: data.data()[index]["score"],
+                      duration: data.data()[index]["duration"],
                     );
                   },
                   separatorBuilder: (context, index) => const SizedBox(
                     height: 20,
                   ),
-                  itemCount: courses.length,
+                  itemCount: data.data().length,
                 ),
               ),
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        mouseCursor: MouseCursor.uncontrolled,
+        selectedIconTheme: const IconThemeData(
+          color: Color(0xFF372A77),
+          size: 30,
+        ),
+        iconSize: 30,
+        fixedColor: Colors.black,
+        unselectedIconTheme: const IconThemeData(
+          color: Colors.black,
+          size: 30,
+        ),
+        unselectedFontSize: 0,
+        selectedFontSize: 0,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+            ),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.auto_stories,
+            ),
+            label: "Courses",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.shopping_cart,
+            ),
+            label: "Car",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person,
+            ),
+            label: "Account",
+          ),
+        ],
       ),
     );
   }
