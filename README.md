@@ -1,16 +1,25 @@
-# cursos_app
+# Cursos App
 
-A new Flutter project.
+- Nos últimos dias estive praticando o desenvolvimento de apps mobile com Flutter, depois de algum tempo.
 
-## Getting Started
+- Para este projeto peguei um design no site dribbble para praticar minhas habilidades.
 
-This project is a starting point for a Flutter application.
+- Na ocasião escolhi este design do app [Courses App](https://dribbble.com/shots/21527969-Online-Course-Mobile-App).
 
-A few resources to get you started if this is your first Flutter project:
+![Courses App](./course_app.jpg)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Telas Criadas
+
+- **Tela inicial:**
+
+![Initial Screen](./assets/images/imp/initial_screen.png)
+
+- **Tela Home:**
+
+![Home Screen ](./assets/images/imp/home_screen.png)    |   ![Home Screen 2](./assets/images/imp/home_screen2.png)
+
+
+- **Tela Detalhes:**
+
+![Detail Screen ](./assets/images/imp/detail_screen.png)   | ![Home Screen ](./assets/images/imp/detail_screen2.png) 

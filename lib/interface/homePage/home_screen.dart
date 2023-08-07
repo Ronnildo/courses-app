@@ -1,4 +1,4 @@
-import 'package:cursos_app/interface/detailCourse/detail_page.dart';
+import 'package:cursos_app/interface/detailCourse/detail_screen.dart';
 import 'package:cursos_app/interface/homePage/widgets/card_course.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';

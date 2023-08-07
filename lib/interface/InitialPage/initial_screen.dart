@@ -1,4 +1,4 @@
-import 'package:cursos_app/interface/homePage/home_page.dart';
+import 'package:cursos_app/interface/homePage/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class InitialPage extends StatefulWidget {
