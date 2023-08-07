@@ -1,6 +1,6 @@
 # Cursos App
 
-- Nos últimos dias estive praticando o desenvolvimento de apps mobile com Flutter, depois de algum tempo.
+- Nos últimos dias estive praticando desenvolvimento de apps mobile com Flutter, depois de algum tempo.
 
 - Para este projeto peguei um design no site dribbble para praticar minhas habilidades.
 
